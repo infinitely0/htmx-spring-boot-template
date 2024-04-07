@@ -1,0 +1,29 @@
+<div th:fragment="showToDo (toDo)">
+  <div class="card mb-2" th:id="@{'toDo-' + ${toDo.id}}">
+
+    <div th:class="${toDo.completed} ? 'completed' : ''">
+      <div class="card-body">
+
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title" th:text="${toDo.title}"></h5>
+          <form th:hx-delete="@{'/todos/' + ${toDo.id}}" hx-swap="outerHTML" th:hx-target="@{'#toDo-' + ${toDo.id}}">
+            <button class="btn btn-outline-danger" type="submit">Delete</button>
+          </form>
+        </div>
+
+        <p class="card-text" th:text="${toDo.description}"></p>
+
+        <div class="d-flex justify-content-between">
+          <form th:hx-patch="@{'/todos/' + ${toDo.id}}" hx-swap="outerHTML" th:hx-target="@{'#toDo-' + ${toDo.id}}">
+            <input type="hidden" name="completed" th:value="${!toDo.completed}"/>
+            <button class="btn btn-outline-primary" type="submit">Completed</button>
+          </form>
+
+          <form th:hx-get="@{'/todos/' + ${toDo.id} + '/edit'}" hx-swap="outerHTML" th:hx-target="@{'#toDo-' + ${toDo.id}}">
+            <button class="btn btn-outline-dark" type="submit">Edit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

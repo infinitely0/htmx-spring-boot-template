@@ -1,0 +1,16 @@
+.completed {
+  opacity: 0.5;
+  text-decoration: line-through
+}
+
+/* Sticky footer */
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+}

@@ -1,0 +1,7 @@
+/log/
+/target/
+*.class
+*.log
+*.jar
+hs_err_pid*
+replay_pid*

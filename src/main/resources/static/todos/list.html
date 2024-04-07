@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"
+      layout:decorate="~{layouts/main.html}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<body>
+<section layout:fragment="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <h1>To-do's</h1>
+
+        <div th:each="toDo : ${toDos}">
+          <div th:replace="~{todos/show :: showToDo(toDo=${toDo})}"></div>
+        </div>
+
+        <div id="new-todo"></div>
+
+        <form hx-get="/todos/new" hx-swap="outerHTML" hx-target="#new-todo">
+          <button class="btn btn-primary my-3" type="submit">New to-do</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

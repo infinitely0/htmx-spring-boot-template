@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"
+      layout:decorate="~{layouts/main.html}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/html">
+<body>
+
+<section layout:fragment="content">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <img src="assets/htmx_logo.png" height="100" alt="htmx logo">
+      <span class="h1 m-3">+</span>
+      <img src="assets/spring_boot_logo.png" height="100" alt="Spring Boot logo">
+
+      <h1 class="my-5">Go to the Demo</h1>
+
+      <a class="btn btn-primary btn-lg" href="/todos">View To-Do App</a>
+    </div>
+
+    <hr>
+
+    <h2>How this application works</h2>
+
+    <p>
+      The resource handling and routing is based on <a href="https://guides.rubyonrails.org/routing.html">Ruby on Rails conventions</a>.
+    </p>
+    <p>
+      The first three routes typically return a page containing either a list (to view all items) or a form (to create or edit an item),
+      but they can also return HTML fragments so the response can be embedded in the page where the request was made.
+    </p>
+    <p>
+      The rest are the CRUD operations. Their response similarly can be in the form of a full page or a fragment.
+    </p>
+
+    <table class="table table-striped">
+      <thead class="table-dark">
+      <tr>
+        <th>HTTP method</th>
+        <th>Path</th>
+        <th>Controller method</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>GET</td>
+        <td>/todos</td>
+        <td>list</td>
+        <td>View all to-do's</td>
+      </tr>
+      <tr>
+        <td>GET</td>
+        <td>/todos/new</td>
+        <td>init</td>
+        <td>View form for creating a new to-do</td>
+      </tr>
+      <tr>
+        <td>GET</td>
+        <td>/todos/{id}/edit</td>
+        <td>edit</td>
+        <td>View form for editing a to-do</td>
+      </tr>
+      <tr>
+        <td>POST</td>
+        <td>/todos</td>
+        <td>create</td>
+        <td>Create a new to-do</td>
+      </tr>
+      <tr>
+        <td>GET</tD>
+        <td>/todos/{id}</td>
+        <td>read</td>
+        <td>View a single to-do</td>
+      </tr>
+      <tr>
+        <td>PUT/PATCH</td>
+        <td>/todos/{id}</td>
+        <td>update</td>
+        <td>Update a to-do</td>
+      </tr>
+      <tr>
+        <td>DELETE</td>
+        <td>/todos/{id}</td>
+        <td>delete</td>
+        <td>Delete a to-do</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p>
+      In a "traditional" website, the GET requests might return a full HTML page, while the rest would result in a redirect to a different page.
+    </p>
+
+    <p>
+      In single-page applications with a typical "REST API", requests are made with JSON parameters and the response is a JSON object.
+      A JavaScript framework then handles the rendering of views by generating HTML containing the data from the JSON object.
+    </p>
+
+    <p>
+      In this application, the behaviour of SPAs can be emulated without a JavaScript framework. Forms are used to make requests, and the responses
+      (fragments) are then injected into the page with htmx.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>

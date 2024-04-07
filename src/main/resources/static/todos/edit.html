@@ -1,0 +1,25 @@
+<div hx-ext="response-targets">
+  <div class="card mb-2" id="updated-todo">
+    <div class="card-header">
+      Edit to-do
+    </div>
+
+    <div class="card-body">
+      <div id="errors"></div>
+
+      <form th:hx-patch="@{'/todos/' + ${toDo.id}}" hx-swap="outerHTML" hx-target="#updated-todo" hx-target-error="#errors">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input class="form-control" id="title" name="title" type="text" th:value="${toDo.title}"/>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" name="description" th:text="${toDo.description}"></textarea>
+        </div>
+
+        <button class="btn btn-primary my-2" type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

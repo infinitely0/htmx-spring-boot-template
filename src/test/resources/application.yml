@@ -1,0 +1,20 @@
+spring:
+
+  profiles:
+    active: 'test'
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+
+  flyway:
+    enabled: false
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/static/

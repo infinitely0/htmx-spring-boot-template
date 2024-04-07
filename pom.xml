@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <artifactId>htmx-spring-boot</artifactId>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+          <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+    </build>
+
+    <description>htmx + Spring Boot Demo</description>
+    <groupId>com.example</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <name>todo</name>
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <relativePath/>
+        <version>3.2.0</version> <!-- lookup parent from repository -->
+    </parent>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- Spring Boot -->
+
+        <dependency>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+
+        <!-- Database -->
+
+        <dependency>
+            <artifactId>postgresql</artifactId>
+            <groupId>org.postgresql</groupId>
+            <version>42.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>10.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+            <version>10.7.1</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Views -->
+
+        <dependency>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+        </dependency>
+
+        <!-- Annotations -->
+
+        <dependency>
+            <artifactId>lombok</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <version>1.18.30</version>
+        </dependency>
+
+        <!-- Testing -->
+
+        <dependency>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <artifactId>h2</artifactId>
+            <groupId>com.h2database</groupId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Webjars -->
+
+        <dependency>
+            <artifactId>webjars-locator-core</artifactId>
+            <groupId>org.webjars</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>bootstrap</artifactId>
+            <groupId>org.webjars</groupId>
+            <version>5.1.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>bootstrap-icons</artifactId>
+            <groupId>org.webjars.npm</groupId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>htmx.org</artifactId>
+            <groupId>org.webjars.npm</groupId>
+            <version>1.9.10</version>
+        </dependency>
+
+        <!-- Devtools -->
+
+        <dependency>
+            <artifactId>spring-boot-devtools</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <optional>true</optional>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
+</project>
